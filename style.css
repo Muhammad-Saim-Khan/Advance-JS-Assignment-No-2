@@ -1,0 +1,145 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: black;
+  height: 100vh;
+}
+#model {
+  width: 230px;
+  background-color: black;
+  color: white;
+  justify-content: center;
+  border: 2px solid red;
+}
+#model:hover {
+  background-color: darkblue;
+}
+.button {
+  width: 200px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: rgb(0, 0, 202);
+  border: none;
+  color: white;
+}
+#brand {
+  width: 230px;
+  background-color: black;
+  color: white;
+  justify-content: center;
+  border: 2px solid red;
+}
+#brand:hover {
+  background-color: darkblue;
+}
+.center {
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.outer {
+  position: relative;
+  margin: 0 50px;
+  background: #111;
+}
+.button {
+  height: 70px;
+  width: 220px;
+  border-radius: 50px;
+}
+.outer button,
+.outer span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.outer button {
+  background: #111;
+  color: #f2f2f2;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  z-index: 9;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.button button {
+  height: 60px;
+  width: 210px;
+  border-radius: 50px;
+}
+.outer span {
+  height: 100%;
+  width: 100%;
+  background: inherit;
+}
+.button span {
+  border-radius: 50px;
+}
+.outer:hover span:nth-child(1) {
+  filter: blur(7px);
+}
+.outer:hover span:nth-child(2) {
+  filter: blur(14px);
+}
+.outer:hover {
+  background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+  animation: rotate 1.5s linear infinite;
+}
+@keyframes rotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+.block {
+  align-content: center;
+  position: relative;
+  margin: 3% auto 0;
+  width: fit-content;
+  height: fit-content;
+  background: linear-gradient(0deg, black, rgb(44, 43, 43));
+}
+.glow::before,
+.glow::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(
+    45deg,
+    #e6fb04,
+    #ff6600,
+    #00ff66,
+    #00ffff,
+    #ff00ff,
+    #ff0099,
+    #6e0dd0,
+    #ff3300,
+    #099fff
+  );
+  background-size: 400%;
+  width: calc(100% + 5px);
+  height: calc(100% + 5px);
+  z-index: -1;
+  animation: animate 20s linear infinite;
+}
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+.glow::after {
+  filter: blur(40px);
+}
